@@ -1,18 +1,10 @@
 const express = require("express");
+const produtoRoutes =
+require( "./routes/produto.routes");
 
 const app = express();
 
-const produtos = [
-  { id: 1, nome: "Notebook", preco: 3500 },
-  { id: 2, nome: "Mouse", preco: 120 },
-];
-
 app.use(express.json());
+app.use("/produtos", produtoRoutes);
 
-app.get("/produtos", (req, res) => {
-  res.status(200).json(produtos);
-});
-
-app.listen(3000, "0.0.0.0", () => {
-  console.log("API rodando na porta 3000");
-});
+app.listen(3000);
