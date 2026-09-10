@@ -22,6 +22,6 @@ exports.criar = (req, res) => {
         const produto = service.criar(req.body);
         res.status(201).json(produto);
     } catch(error){
-        res.status(400).json({mensagem: error.mensage });
+        res.status(400).json({mensagem: error.message });
     }
 };
